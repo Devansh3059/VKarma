@@ -1,0 +1,26 @@
+{% extends 'basic_app/basic_app_base.html'%}
+{% load static %}
+
+{% block body_block %}
+
+<div class="jumbotron">
+    {% if registered %}
+    <h1>Thanks for registering</h1>
+
+    {% else %}
+
+    <h1>Register Here</h1>
+    <h3>Fill the form</h3>
+    <form action="" method="post">
+
+        {% csrf_token %}
+        {{ user_form.as_p }}
+
+        <!-- user_form  will be defined in context dictionary -->
+        <input class="btn btn-primary" type="Submit" name="" id="" value="Register">
+    </form>
+
+    {% endif %}
+</div>
+
+{% endblock %}
