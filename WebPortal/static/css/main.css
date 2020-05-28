@@ -7,6 +7,9 @@
 body{
     height: 100vh;
 }
+.heading{
+    text-align: center;
+}
 
 .navbar{
     display: flex;

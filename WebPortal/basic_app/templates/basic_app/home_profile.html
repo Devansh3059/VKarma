@@ -1,0 +1,17 @@
+{% extends 'basic_app/basic_app_base.html'%}
+{% load static %}
+
+{% block body_block %}
+<div class="jumbotron">
+{% if user.is_authenticated %}
+<h1 class="heading">Hello {{user.username}}</h1>
+<h2 class="heading">Welcome to the Student's Dashboard</h2>
+{% else %}
+<h1>
+    Please Login
+    <a class="btn btn-default" href="{%url 'basic_app:user_login'%}">Log In</a>
+</h1>
+{% endif %}
+</div>
+
+{% endblock %}

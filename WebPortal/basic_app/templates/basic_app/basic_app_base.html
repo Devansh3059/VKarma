@@ -22,7 +22,19 @@
         <ul class="nav-links">
             <li><a href="/">Home</a></li>
             <li><a href="{%url 'basic_app:register'%}">Register</a></li>
-            <li><a href="#">Log In</a></li>
+            {% if user.is_authenticated %}
+            <li class="nav-item">
+                <a class="navbar-link" href="{%url 'basic_app:home_profile'%}">Profie</a>
+            </li>
+            <li class="nav-item">
+                <a class="navbar-link" href="{%url 'logout'%}">Log Out</a>
+            </li>
+            {% else %}
+            <li class="nav-item">
+                <a class="navbar-link" href="{%url 'basic_app:user_login'%}">Log In</a>
+            </li>
+
+            {% endif %}
             <li><a href="{%url 'admin:index'%}">Admin</a></li>
             <li><a href="#">About</a></li>
         </ul>
@@ -31,6 +43,7 @@
             <div class="line2"></div>
             <div class="line3"></div>
         </div>
+
     </nav>
     <div class="container">
         {% block body_block %}
