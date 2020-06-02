@@ -10,4 +10,5 @@ urlpatterns = [
     url(r"^update_profile/$", views.AddDetail, name="addDetail"),
     url(r"^student_detail/$", views.StudentDetailView.as_view(), name="view_details"),
     url(r"^delete/$", views.DeleteUserProfile, name="deleteDetails"),
+    url(r"^delete_form/$", views.profile_delete, name="deleteDetails"),
 ]
