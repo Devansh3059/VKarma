@@ -26,14 +26,14 @@ BLOOD_GROUPS = [
     ('O-', 'O-'),
 ]
 class UserProfile(models.Model):
-    user = models.ForeignKey(UserProfileInfo,related_name='students',on_delete=models.CASCADE)
-    name = models.CharField(max_length=100)
-    age = models.PositiveIntegerField()
+    user = models.ForeignKey(User,related_name='students',on_delete=models.CASCADE)
+    name = models.CharField(max_length=100, blank=True, null= True)
+    age = models.PositiveIntegerField(null=True, blank=True)
     phone_regex = RegexValidator(regex=r'^\+?1?\d{9,15}$', message="Entered the number in the format: '+999999999'. Up to 15 digits allowed.")
-    phone = models.CharField(validators=[phone_regex], max_length=17, blank=True)
-    address = models.CharField(max_length=500, blank=True)
-    blood_group = models.CharField(choices=BLOOD_GROUPS, max_length=3, blank=True)
+    phone = models.CharField(validators=[phone_regex], max_length=17, blank=True,null=True)
+    address = models.CharField(max_length=500, blank=True, null=True)
+    blood_group = models.CharField(choices=BLOOD_GROUPS, max_length=3, blank=True, null=True)
 
 
     def __str__(self):
-        return self.name
+        return "Profile for {}".format(self.user)

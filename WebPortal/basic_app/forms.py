@@ -12,3 +12,8 @@ class UserDetailForm(forms.ModelForm):
     class Meta:
         model = UserProfile
         fields = ('name', 'age', 'phone','address', 'blood_group')
+    
+    # def __init__(self, *args, **kwargs):
+    #     super(UserDetailForm, self).__init__(*args, **kwargs)
+    #     if self.instance:
+    #         self.fields['user'].queryset = User.objects.filter(user_type="user")

@@ -1,24 +1,15 @@
 {% extends 'basic_app/basic_app_base.html'%}
 {% load static %}
-
 {% block body_block %}
-
 <div class="jumbotron">
-    {% if detailadded %}
-    <h1>Your Details have been up uploaded</h1>
-
+    {% if deletedetail %}
+    <h1>Your Details have been deleted</h1>
     {% else %}
-
-    <h1>Add Details Here</h1>
-    <h3>Fill the form</h3>
     <form action="" method="POST">
-
         {% csrf_token %}
-        {{ form.as_p }}
-
-        <input class="btn btn-primary" type="Submit" value="Add Details">
+        <input type="Submit" value="Delete" class="btn btn-danger">
     </form>
-
+    <!-- <a href="{% url 'basic_app:deleteDetails' %}">Delete Profile</a> -->
     {% endif %}
 </div>
 

@@ -1,0 +1,20 @@
+{% extends 'basic_app/basic_app_base.html'%}
+{% load static %}
+{% block body_block %}
+
+<div class="jumbotron">
+    <table class="table table-striped">
+        {% for obj in object_list %}
+            <tr>
+                <td>{{ obj.name }}</td>
+                <td>{{ obj.age }}</td>
+                <td>{{ obj.phone }}</td>
+                <td>{{ obj.address }}</td>
+                <td>{{ obj.blood_group }}</td>
+            </tr>
+            {% endfor %}
+        </table>
+        <a href="{% url 'basic_app:deleteDetails' %}">Delete Profile</a>
+</div>
+
+{% endblock %}
