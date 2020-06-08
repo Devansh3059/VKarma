@@ -25,9 +25,9 @@ STATIC_DIR = os.path.join(BASE_DIR,"static")
 SECRET_KEY = '2t+s2wvh(h5^r@gywz01zvabzo(!)9e!f%rr9_q(^3lm(-#^ha'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['devansh-vkarma.herokuapp.com','127.0.0.1']
 
 
 # Application definition
