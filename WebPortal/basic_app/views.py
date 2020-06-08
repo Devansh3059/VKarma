@@ -78,20 +78,6 @@ def user_login(request):
 
     else:
         return render(request,'basic_app/login.html',{})
-# def addDetail(request,pk):
-#     detailadded = False
-#     if request.method == 'POST':
-#         detail_form = StudentDetailForm(data=request.POST)
-#         if detail_form.is_valid():
-#             student = detail_form.save() 
-#             student.save()
-#             detailadded = True
-#         else:
-#             print(detail_form.errors)
-#     else:
-#         detail_form = StudentDetailForm()
-#     return render(request,'basic_app/student_detail_form.html',{'detail_form':detail_form,
-#                                                             'detailadded':detailadded})
 
 @login_required(login_url='/login/')
 def AddDetail(request):
